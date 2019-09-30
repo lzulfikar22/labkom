@@ -28,19 +28,19 @@ class Dashboard extends CI_Controller
 	{
 
 		// panggil method countByCat() di model book_model untuk menghitung jumlah data buku per kategori untuk ditampilkan di view
-		$data['countBukuTeks'] = $this->book_model->countByCat('1');
-		$data['countMajalah'] = $this->book_model->countByCat('2');
-		$data['countSkripsi'] = $this->book_model->countByCat('3');
-		$data['countThesis'] = $this->book_model->countByCat('4');
-		$data['countDisertasi'] = $this->book_model->countByCat('5');
-		$data['countNovel'] = $this->book_model->countByCat('6');
-		$data['countKomik'] = $this->book_model->countByCat('7');
+		// $data['countBukuTeks'] = $this->book_model->countByCat('1');
+		// $data['countMajalah'] = $this->book_model->countByCat('2');
+		// $data['countSkripsi'] = $this->book_model->countByCat('3');
+		// $data['countThesis'] = $this->book_model->countByCat('4');
+		// $data['countDisertasi'] = $this->book_model->countByCat('5');
+		// $data['countNovel'] = $this->book_model->countByCat('6');
+		// $data['countKomik'] = $this->book_model->countByCat('7');
 
 		// baca data session 'fullname' untuk ditampilkan di view
 
 		// tampilkan view 'dashboard/index'
 		$this->load->view('dashboard/index');
-		$this->load->view('dashboard/template/footer', $data);
+		$this->load->view('dashboard/template/footer');
 	}
 
 	// method untuk menambah data buku
