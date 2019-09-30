@@ -6,7 +6,7 @@
       
       <?php
       // arahkan form submit ke kontroller 'book/insert' 
-      echo form_open_multipart('book/insert'); 
+      echo form_open_multipart('inventaris/insert'); 
       ?>
 
           <div class="form-group row">

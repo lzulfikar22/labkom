@@ -59,19 +59,14 @@ class Inventaris_model extends CI_Model
 	// }
 
 	// method untuk insert data buku ke tabel 'books'
-	public function insertInventaris($judul, $pengarang, $penerbit, $thnterbit, $sinopsis, $idkategori, $filename)
+	public function insertInventaris($nama, $jumlah)
 	{
 
 		$data = array(
-			"judul" => $judul,
-			"pengarang" => $pengarang,
-			"penerbit" => $penerbit,
-			"sinopsis" => $sinopsis,
-			"idkategori" => $idkategori,
-			"thnterbit" => $thnterbit,
-			"imgfile" => $filename
+			"nama_barang" => $nama,
+			"jumlah_barang" => $jumlah
 		);
-		$query = $this->db->insert('books', $data);
+		$query = $this->db->insert('inventaris', $data);
 	}
 
 

@@ -1,5 +1,5 @@
 <?php
-class Book extends CI_Controller
+class Inventaris extends CI_Controller
 {
 
 	public function __construct()
@@ -25,41 +25,14 @@ class Book extends CI_Controller
 	// method untuk tambah data buku
 	public function insert()
 	{
-
-		// target direktori fileupload
-		$config['upload_path'] = './assets/images';
-		$this->load->library('upload', $config);
-		$this->upload->data();
-		// if ( ! $this->upload->do_upload('berkas')){
-		// 	$error = array('error' => $this->upload->display_errors());
-		// 	$this->load->view('v_upload', $error);
-		// }else{
-		// 	$this->load->view('v_upload_sukses', $data);
-		// }
-		// $target_dir = base_url()."/assets/images/";
-
-		// baca nama file upload
-		$filename = $_FILES["imgcover"]["name"];
-		
-		// menggabungkan target dir dengan nama file
-		// $target_file = $target_dir . basename($filename);
-
-		// proses upload
-		// move_uploaded_file($_FILES["imgcover"]["tmp_name"], $target_file);
-
 		// baca data dari form insert buku
-		$judul = $_POST['judul'];
-		$pengarang = $_POST['pengarang'];
-		$penerbit = $_POST['penerbit'];
-		$sinopsis = $_POST['sinopsis'];
-		$thnterbit = $_POST['thnterbit'];
-		$idkategori = $_POST['idkategori'];
-
+		$nama = $_POST['namaBarang'];
+		$jumlah = $_POST['jumlahBarang'];
 		// panggil method insertBook() di model 'book_model' untuk menjalankan query insert
-		$this->book_model->insertBook($judul, $pengarang, $penerbit, $thnterbit, $sinopsis, $idkategori, $filename);
+		$this->inventaris_model->insertInventaris($nama, $jumlah);
 		
 		// arahkan ke method 'books' di kontroller 'dashboard'
-		redirect('dashboard/books');
+		redirect('dashboard/inventaris');
 	}
 	
 	// method untuk edit data buku berdasarkan id
