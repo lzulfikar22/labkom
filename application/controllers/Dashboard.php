@@ -46,9 +46,6 @@ class Dashboard extends CI_Controller
 	// method untuk menambah data buku
 	public function add()
 	{
-		// panggil method getKategori() di model_book untuk membaca data list kategori dari tabel kategori untuk ditampilkan ke view
-		$data['kategori'] = $this->book_model->getKategori();
-
 		// baca data session 'fullname' untuk ditampilkan di view
 		$data['fullname'] = $_SESSION['fullname'];
 

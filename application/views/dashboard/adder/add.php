@@ -12,60 +12,14 @@
           <div class="form-group row">
               <label for="judul" class="col-sm-2 col-form-label">Judul Buku</label>
               <div class="col-sm-10">
-                  <input type="text" class="form-control" name="judul" placeholder="Masukkan judul buku">
+                  <input type="text" class="form-control" name="namaBarang" placeholder="Masukkan judul buku">
               </div>
           </div>
 
           <div class="form-group row">
               <label for="pengarang" class="col-sm-2 col-form-label">Nama Pengarang</label>
               <div class="col-sm-10">
-                  <input type="text" class="form-control" name="pengarang" placeholder="Masukkan nama pengarang buku">
-              </div>
-          </div>
-
-          <div class="form-group row">
-              <label for="kategori" class="col-sm-2 col-form-label">Kategori Buku</label>
-              <div class="col-sm-10">
-                  <select class="form-control" name="idkategori">
-    
-                  <?php
-                      // menampilkan combo box berisi kategori buku
-                      foreach ($kategori as $kat_item):
-                  ?>
-                      <option value="<?php echo $kat_item['idkategori']?>"><?php echo $kat_item['kategori']?></option>
-                  <?php
-                      endforeach;
-                  ?>
-                  </select>
-              </div>
-          </div>
-
-
-          <div class="form-group row">
-              <label for="penerbit" class="col-sm-2 col-form-label">Penerbit Buku</label>
-              <div class="col-sm-10">
-                  <input type="text" class="form-control" name="penerbit" placeholder="Masukkan penerbit buku">
-              </div>
-          </div>
-
-          <div class="form-group row">
-              <label for="thnterbit" class="col-sm-2 col-form-label">Tahun Terbit</label>
-              <div class="col-sm-10">
-                  <input type="text" class="form-control" name="thnterbit" placeholder="Masukkan tahun terbit">
-              </div>
-          </div>
-
-          <div class="form-group row">
-              <label for="sinopsis" class="col-sm-2 col-form-label">Sinopsis Buku</label>
-              <div class="col-sm-10">
-                  <textarea class="form-control" name="sinopsis" rows="3"></textarea>
-              </div>
-          </div>
-
-          <div class="form-group row">
-              <label for="imgcover" class="col-sm-2 col-form-label">Image Cover Buku</label>
-              <div class="col-sm-10">
-                  <input type="file" class="form-control-file" name="imgcover">
+                  <input type="text" class="form-control" name="jumlahBarang" placeholder="Masukkan nama pengarang buku">
               </div>
           </div>
 
@@ -77,7 +31,6 @@
               </div>
           </div>
 
-          
       </form>
 
     </main>
