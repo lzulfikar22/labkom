@@ -17,9 +17,9 @@ class Inventaris extends CI_Controller
 	// method hapus data buku berdasarkan id
 	public function delete($id)
 	{
-		$this->book_model->delBook($id);
+		$this->inventaris_model->delInventaris($id);
 		// arahkan ke method 'books' di kontroller 'dashboard'
-		redirect('dashboard/books');
+		redirect('dashboard/inventaris');
 	}
 
 	// method untuk tambah data buku
@@ -39,30 +39,14 @@ class Inventaris extends CI_Controller
 	public function edit()
 	{
 
-		// target direktori fileupload
-		$target_dir = "c:/xampp/htdocs/books/assets/images/";
-
-		// baca nama file upload
-		$filename = $_FILES["imgcover"]["name"];
-
-		// menggabungkan target dir dengan nama file
-		$target_file = $target_dir . basename($filename);
-		
-		// proses upload
-		move_uploaded_file($_FILES["imgcover"]["tmp_name"], $target_file);
-
 		// baca data dari form insert buku
-		$judul = $_POST['judul'];
-		$pengarang = $_POST['pengarang'];
-		$penerbit = $_POST['penerbit'];
-		$sinopsis = $_POST['sinopsis'];
-		$thnterbit = $_POST['thnterbit'];
-		$idkategori = $_POST['idkategori'];
-		$idbuku = $_POST['idbuku'];
+		$nama = $_POST['namaBarang'];
+		$jumlah = $_POST['jumlahBarang'];
+		$id = $_POST['idbarang'];
 
-		$this->book_model->editBook($judul, $pengarang, $penerbit, $thnterbit, $sinopsis, $idkategori, $filename, $idbuku);
+		$this->inventaris_model->editInventaris($nama, $jumlah, $id);
 
-		redirect('dashboard/books');
+		redirect('dashboard/inventaris');
 	}
 
 	// method untuk mencari data buku berdasarkan 'key'

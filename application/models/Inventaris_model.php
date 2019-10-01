@@ -3,11 +3,11 @@
 class Inventaris_model extends CI_Model
 {
 	// method untuk menampilkan data buku
-	public function showInventaris($id = false,$number = false, $offset = false)
+	public function showInventaris($id = false, $number = false, $offset = false)
 	{
 		// membaca semua data buku dari tabel 'books'
 		if ($id == false) {
-			$query = $this->db->get('inventaris',$number, $offset);
+			$query = $this->db->get('inventaris', $number, $offset);
 			return $query->result_array();
 		} else {
 			// membaca data buku berdasarkan id
@@ -17,33 +17,19 @@ class Inventaris_model extends CI_Model
 	}
 
 	// method untuk hapus data buku berdasarkan id
-	public function delBook($id)
+	public function delInventaris($id)
 	{
-		$this->db->delete('books', array("idbuku" => $id));
+		$this->db->delete('inventaris', array("id_barang" => $id));
 	}
-	public function editBook($judul, $pengarang, $penerbit, $thnterbit, $sinopsis, $idkategori, $filename, $idbuku)
+	public function editInventaris($nama, $jumlah, $idbarang)
 	{
-		if ($filename == '') {
-			$data = array(
-				"judul" => $judul,
-				"pengarang" => $pengarang,
-				"penerbit" => $penerbit,
-				"sinopsis" => $sinopsis,
-				"idkategori" => $idkategori,
-				"thnterbit" => $thnterbit
-			);
-		} else {
-			$data = array(
-				"judul" => $judul,
-				"pengarang" => $pengarang,
-				"penerbit" => $penerbit,
-				"sinopsis" => $sinopsis,
-				"idkategori" => $idkategori,
-				"thnterbit" => $thnterbit,
-				"imgfile" => $filename
-			);
-		}
-		$this->db->update('books', $data, "idbuku = " . $idbuku);
+
+		$data = array(
+			"nama_barang" => $nama,
+			"jumlah_barang" => $jumlah
+		);
+
+		$this->db->update('inventaris', $data, "id_barang = " . $idbarang);
 	}
 
 	// method untuk mencari data buku berdasarkan key
@@ -77,7 +63,8 @@ class Inventaris_model extends CI_Model
 	// 	return $query->row()->jum;
 	// }
 
-	public function countAll(){
+	public function countAll()
+	{
 		$query = $this->db->query("SELECT COUNT(*) as jum from inventaris");
 		return $query->row()->jum;
 	}

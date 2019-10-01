@@ -6,16 +6,15 @@
   </form>
 
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Daftar Buku</h1>
+    <h1 class="h2">Daftar Inventaris</h1>
   </div>
 
   <div class="table-responsive">
     <table class="table table-striped table-sm">
       <thead>
         <tr>
-          <th>Judul Buku</th>
-          <th>Pengarang</th>
-          <th>Penerbit</th>
+          <th>Nama Barang</th>
+          <th>Jumlah Barang</th>
         </tr>
       </thead>
       <tbody>
@@ -25,19 +24,19 @@
 
           ?>
           <tr>
-            <td><?php echo $barang['id_barang'] ?></td>
             <td><?php echo $barang['nama_barang'] ?></td>
             <td><?php echo $barang['jumlah_barang'] ?></td>
-            <!-- <td><?php echo anchor('dashboard/view/' . $book_item['idbuku'], 'View', 'Lihat Buku'); ?>
+            <td><?php echo anchor('dashboard/view/' . $barang['id_barang'], 'View', 'Lihat Buku'); ?>
               <?php if ($_SESSION['username'] == 'admin') { ?>
-                | <?php echo anchor('dashboard/edit/' . $book_item['idbuku'], 'Edit', 'Edit Buku'); ?> | <?php echo anchor('book/delete/' . $book_item['idbuku'], 'Del', 'Hapus Buku'); ?>
-              <?php } ?></td> -->
+                | <?php echo anchor('dashboard/edit/' . $barang['id_barang'], 'Edit', 'Edit Buku'); ?> |
+                 <?php echo anchor('inventaris/delete/' . $barang['id_barang'], 'Del', 'Hapus Buku'); ?>
+              <?php } ?></td>
           </tr>
         <?php endforeach; ?>
       </tbody>
     </table>
 
     <?php echo $this->pagination->create_links(); ?>
-    <span>Total Buku : <?php echo $jumlah; ?></span>
+    <span>Total Inventaris : <?php echo $jumlah; ?></span>
   </div>
 </main>
