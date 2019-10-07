@@ -42,8 +42,9 @@ class Dashboard extends CI_Controller
 		$this->load->view('dashboard/index');
 		$this->load->view('dashboard/template/footer');
 	}
+	// --------------------------------------------Inventaris-----------------------------------------------//
 
-	// method untuk menambah data buku
+	// method untuk menambah data inventaris
 	public function add()
 	{
 		// baca data session 'fullname' untuk ditampilkan di view
@@ -110,6 +111,7 @@ class Dashboard extends CI_Controller
 		$this->load->view('dashboard/edit/edit', $data);
 		$this->load->view('dashboard/template/footer', $data);
 	}
+	// ---------------------------------------------User----------------------------------------------------//
 
 	public function user()
 	{
@@ -148,6 +150,29 @@ class Dashboard extends CI_Controller
 		$this->load->view('dashboard/adder/adduser', $data);
 		$this->load->view('dashboard/template/footer', $data);
 	}
+
+	// ---------------------------------------------No Surat---------------------------------------------//
+	public function surat()
+	{
+		$data['surat'] = $this->surat_model->showSurat();
+		// baca data session 'fullname' untuk ditampilkan di view
+		$data['fullname'] = $_SESSION['fullname'];
+
+		// tampilkan view 'dashboard/books'
+		$this->load->view('dashboard/surat', $data);
+		$this->load->view('dashboard/template/footer', $data);
+	}
+
+	public function addSurat()
+	{
+		// baca data session 'fullname' untuk ditampilkan di view
+		$data['fullname'] = $_SESSION['fullname'];
+
+		// tampilkan view 'dashboard/add'
+		$this->load->view('dashboard/adder/addsurat', $data);
+		$this->load->view('dashboard/template/footer', $data);
+	}
+	// ---------------------------------------------Logout-----------------------------------------------//
 
 	// method untuk proses logout
 	public function logout()
