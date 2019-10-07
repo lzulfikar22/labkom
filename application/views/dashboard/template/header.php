@@ -10,7 +10,7 @@
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Jekyll v3.8.5">
   <title>Administrasi Admin</title>
-
+  <script src="https://kit.fontawesome.com/c9dc6b4ae2.js" crossorigin="anonymous"></script>
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/dashboard/">
 
   <!-- Bootstrap core CSS -->

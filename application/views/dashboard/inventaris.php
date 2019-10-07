@@ -15,27 +15,26 @@
         <tr>
           <th>Nama Barang</th>
           <th>Jumlah Barang</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
         <?php
         // menampilkan data buku
         foreach ($inventaris as $barang) :
-
           ?>
           <tr>
             <td><?php echo $barang['nama_barang'] ?></td>
             <td><?php echo $barang['jumlah_barang'] ?></td>
-            <td><?php echo anchor('dashboard/view/' . $barang['id_barang'], 'View', 'Lihat Buku'); ?>
-              <?php if ($_SESSION['username'] == 'admin') { ?>
-                | <?php echo anchor('dashboard/edit/' . $barang['id_barang'], 'Edit', 'Edit Buku'); ?> |
-                 <?php echo anchor('inventaris/delete/' . $barang['id_barang'], 'Del', 'Hapus Buku'); ?>
-              <?php } ?></td>
+            <td><span>Pinjam | </span>
+                <?php echo anchor('dashboard/view/' . $barang['id_barang'], 'View', 'Lihat Buku'); ?>
+              | <?php echo anchor('dashboard/edit/' . $barang['id_barang'], 'Edit', 'Edit Buku'); ?> |
+                <?php echo anchor('inventaris/delete/' . $barang['id_barang'], 'Del', 'Hapus Buku'); ?>
+            </td>
           </tr>
         <?php endforeach; ?>
       </tbody>
     </table>
-
     <?php echo $this->pagination->create_links(); ?>
     <span>Total Inventaris : <?php echo $jumlah; ?></span>
   </div>
